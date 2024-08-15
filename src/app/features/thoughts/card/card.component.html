@@ -1,0 +1,18 @@
+<div
+  class="thought {{ thought.template }} ff-roboto-mono"
+  [ngClass]="thoughtWidth()"
+>
+  <img src="/assets/{{ thought.template }}.png" alt="Colored quotes" />
+  <p class="content">{{ thought.content }}</p>
+  <p class="author">
+    <b>{{ thought.author }}</b>
+  </p>
+  <div class="actions">
+    <button class="update-button">
+      <img src="/assets/update-icon.png" alt="Update icon" />
+    </button>
+    <button class="delete-button">
+      <img src="/assets/delete-icon.png" alt="Delete icon" />
+    </button>
+  </div>
+</div>

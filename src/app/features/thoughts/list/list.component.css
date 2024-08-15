@@ -1,0 +1,22 @@
+.thought-wall {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin: 1rem 0 2rem;
+}
+
+.d-flex {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 13%;
+  margin-right: 13%;
+}
+
+.empty-list {
+  text-align: center;
+  padding: 2rem 0 5rem;
+}

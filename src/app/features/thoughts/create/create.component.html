@@ -1,0 +1,59 @@
+<section class="container create-thoughts ff-inter">
+  <header class="header">
+    <h2>Adicione um <br />pensamento novo:</h2>
+  </header>
+  <form>
+    <label for="thought">Pensamento: *</label>
+    <input
+      type="textarea"
+      class="input"
+      id="thought"
+      name="thought"
+      placeholder="Digite o pensamento"
+      [(ngModel)]="thought.content"
+      autocomplete="off"
+      required="required"
+    />
+
+    <label for="author">Autoria ou fonte:</label>
+    <input
+      type="text"
+      class="input"
+      id="author"
+      name="author"
+      placeholder="Digite a autoria ou fonte"
+      autocomplete="off"
+      [(ngModel)]="thought.author"
+    />
+    <label for="template">Selecione o modelo do card: *</label>
+    <div class="container-radio">
+      <div class="radio-template" *ngFor="let template of templates">
+        <label [for]="template.id">
+          <input
+            type="radio"
+            name="template-card"
+            [id]="template.id"
+            [value]="template.id"
+            [(ngModel)]="thought.template"
+          />
+          <div class="custom-radio">
+            <span></span>
+          </div>
+          <span>{{template.name}}</span>
+        </label>
+        Prévia:
+        <div class="template ff-roboto-mono" [ngClass]="template.id">
+          <img [src]="'/assets/' + template.id + '.png'" alt="Colored quotes" />
+          <p class="content">{{ thought.content }}</p>
+          <p class="author">
+            <b>{{ thought.author }}</b>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="actions">
+      <button (click)="createThought()" class="button w-space">Salvar</button>
+      <button (click)="returnToList()" class="button w-space">Cancelar</button>
+    </div>
+  </form>
+</section>
