@@ -7,14 +7,14 @@ import { Component, Input } from '@angular/core';
   styleUrl: './card.component.css',
 })
 export class CardComponent {
+  constructor() {}
+
   @Input() thought: Thought = {
-    // id: '0',
+    id: '',
     content: '',
     author: '',
     template: '',
   };
-
-  constructor() {}
 
   thoughtWidth(): string {
     if (this.thought.content.length > 256) {

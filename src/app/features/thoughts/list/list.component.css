@@ -20,3 +20,18 @@
   text-align: center;
   padding: 2rem 0 5rem;
 }
+
+@media screen and (max-width: 765px) {
+  .d-flex {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 636px) {
+  .d-flex {
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+  }
+}

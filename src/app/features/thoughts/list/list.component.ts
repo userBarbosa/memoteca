@@ -1,3 +1,4 @@
+import { ConfigService } from './../../../shared/services/config/config.service';
 import { Component, OnInit } from '@angular/core';
 import { Thought } from '../../../shared/models/Thought.model';
 import { ThoughtService } from '../../../shared/services/thought/thought.service';
@@ -8,7 +9,10 @@ import { ThoughtService } from '../../../shared/services/thought/thought.service
   styleUrl: './list.component.css',
 })
 export class ListThoughtsComponent implements OnInit {
-  constructor(private service: ThoughtService) {}
+  constructor(private service: ThoughtService, private cs: ConfigService) {
+    this.routes = this.cs.ROUTES;
+  }
+  readonly routes;
 
   thoughtList: Thought[] = [];
 

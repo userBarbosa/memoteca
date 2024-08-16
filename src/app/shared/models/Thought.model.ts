@@ -1,11 +1,11 @@
-'use strict'
+'use strict';
 
 export interface Thought {
-  id?: string
-  content: string
-  author: string
+  id?: string;
+  content: string;
+  author: string;
   // template: Colors
-  template: string
+  template: string;
 }
 
 // path to file or svg color?

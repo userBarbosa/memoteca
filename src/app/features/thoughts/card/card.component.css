@@ -8,6 +8,7 @@
   cursor: pointer;
   margin-left: 5px;
   margin-top: 10px;
+  background-color: transparent;
 }
 
 .update-button {
@@ -15,6 +16,7 @@
   cursor: pointer;
   margin-right: 10px;
   margin-top: 10px;
+  background-color: transparent;
 }
 
 .thought {
@@ -49,16 +51,11 @@
 }
 
 .thought-p {
-  width: 262px;
+  width: 278px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 636px) {
   .thought-g {
-    width: 100%;
-  }
-}
-@media screen and (max-width: 426px) {
-  .thought-p {
-    width: 100%;
+    width: 278px;
   }
 }

@@ -4,8 +4,7 @@ footer {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   gap: 0px 0px;
-  grid-template-areas:
-    "CopyrightText FooterLogo .";
+  grid-template-areas: "CopyrightText FooterLogo .";
   align-items: center;
   padding: 1rem 2rem;
 }
@@ -24,13 +23,18 @@ footer small {
   color: white;
 }
 
+.header .logo {
+  padding: 2rem;
+  width: 500px;
+}
+
 @media (max-width: 576px) {
-  .cabecalho .logo {
+  .header .logo {
     padding: 2rem;
   }
 
-  .cabecalho p {
-    font-size: 1.5rem
+  .header p {
+    font-size: 1.5rem;
   }
 }
 

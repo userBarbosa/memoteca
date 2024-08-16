@@ -17,13 +17,10 @@
 
 .create-thoughts form {
   background: #c4edff;
-
   border: none;
   border-radius: 20px;
-
   display: flex;
   flex-direction: column;
-
   padding: 2rem;
 }
 

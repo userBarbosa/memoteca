@@ -39,7 +39,7 @@
           <div class="custom-radio">
             <span></span>
           </div>
-          <span>{{template.name}}</span>
+          <span>{{ template.name }}</span>
         </label>
         Prévia:
         <div class="template ff-roboto-mono" [ngClass]="template.id">
@@ -53,7 +53,7 @@
     </div>
     <div class="actions">
       <button (click)="createThought()" class="button w-space">Salvar</button>
-      <button (click)="returnToList()" class="button w-space">Cancelar</button>
+      <button (click)="cancel()" class="button w-space">Cancelar</button>
     </div>
   </form>
 </section>

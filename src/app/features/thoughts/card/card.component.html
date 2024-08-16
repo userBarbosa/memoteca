@@ -8,10 +8,16 @@
     <b>{{ thought.author }}</b>
   </p>
   <div class="actions">
-    <button class="update-button">
+    <button
+      class="update-button"
+      routerLink="/thoughts/update/{{ thought.id }}"
+    >
       <img src="/assets/update-icon.png" alt="Update icon" />
     </button>
-    <button class="delete-button">
+    <button
+      class="delete-button"
+      routerLink="/thoughts/delete/{{ thought.id }}"
+    >
       <img src="/assets/delete-icon.png" alt="Delete icon" />
     </button>
   </div>

@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,11 +19,6 @@ import { UpdateThoughtsComponent } from './features/thoughts/update/update.compo
 import { HeaderComponent } from './core/header/header.component';
 import { FooterComponent } from './core/footer/footer.component';
 import { CardComponent } from './features/thoughts/card/card.component';
-import {
-  HttpClientModule,
-  provideHttpClient,
-  withInterceptorsFromDi,
-} from '@angular/common/http';
 
 // shared - shared code
 
@@ -34,12 +33,7 @@ import {
     UpdateThoughtsComponent,
     CardComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    // HttpClientModule,
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [provideHttpClient(withInterceptorsFromDi())],
   bootstrap: [AppComponent],
 })

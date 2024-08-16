@@ -5,13 +5,16 @@ import { CreateThoughtsComponent } from './features/thoughts/create/create.compo
 import { ListThoughtsComponent } from './features/thoughts/list/list.component';
 import { DeleteThoughtsComponent } from './features/thoughts/delete/delete.component';
 import { UpdateThoughtsComponent } from './features/thoughts/update/update.component';
+import { ConfigService } from './shared/services/config/config.service';
+
+const cs = new ConfigService();
 
 const routes: Routes = [
-  { path: '', redirectTo: 'thoughts/all', pathMatch: 'full' },
-  { path: 'thoughts/create', component: CreateThoughtsComponent },
-  { path: 'thoughts/all', component: ListThoughtsComponent },
-  { path: 'thoughts/delete/:id', component: DeleteThoughtsComponent },
-  { path: 'thoughts/update/:id', component: UpdateThoughtsComponent },
+  { path: '', redirectTo: cs.ROUTES.LIST, pathMatch: 'full' },
+  { path: cs.ROUTES.NEW, component: CreateThoughtsComponent },
+  { path: cs.ROUTES.LIST, component: ListThoughtsComponent },
+  { path: cs.ROUTES.DELETE, component: DeleteThoughtsComponent },
+  { path: cs.ROUTES.UPDATE, component: UpdateThoughtsComponent },
 ];
 
 @NgModule({
