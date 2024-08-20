@@ -8,6 +8,10 @@ Memoteca is an Angular application designed to store and manage personal thought
 - Dynamic and responsive UI
 - Integrated testing with Karma
 
+## Layout
+
+- [Layout images and videos](https://github.com/userBarbosa/memoteca/tree/main/public/demo)
+
 ## Getting Started
 
 ### Prerequisites
