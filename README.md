@@ -1,27 +1,64 @@
 # Memoteca
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.4.
+Memoteca is an Angular application designed to store and manage personal thoughts. The project leverages Angular CLI for rapid development and comes with built-in features for code scaffolding, testing, and building.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Thought storage and management
+- Dynamic and responsive UI
+- Integrated testing with Karma
 
-## Code scaffolding
+## Getting Started
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Prerequisites
 
-## Build
+- Node.js 18.x
+- Angular CLI 18.1.4
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Installation
 
-## Running unit tests
+```bash
+git clone https://github.com/userBarbosa/memoteca.git
+cd memoteca
+npm install
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Development
 
-## Running end-to-end tests
+To run the development server:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```bash
+ng serve
+```
 
-## Further help
+Navigate to `http://localhost:4200/`.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### Building
+
+To build the project:
+
+```bash
+ng build
+```
+
+### Testing
+
+To run unit tests:
+
+```bash
+ng test
+```
+
+To run end-to-end tests:
+
+```bash
+ng e2e
+```
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the MIT License.
