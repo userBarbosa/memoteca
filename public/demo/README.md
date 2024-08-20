@@ -30,4 +30,7 @@ A screenshot of the home screen with multiple thoughts present. This image demon
 ### 6. `responsiveness.mp4`
 
 A video demonstrating the responsiveness of the application. This video showcases how the application adjusts and functions across different screen sizes and devices.  
-![Responsiveness Video](6-responsiveness.mp4)
+
+Video: ![Responsiveness Video](6-responsiveness.mp4)  
+GIF Preview:  
+![6-responsiveness](https://github.com/user-attachments/assets/815a45ee-8e1b-4fe2-b586-6ffffb222a86)  
