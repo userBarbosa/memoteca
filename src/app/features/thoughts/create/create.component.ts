@@ -21,7 +21,7 @@ export class CreateThoughtsComponent {
   readonly templates;
 
   thought: Thought = {
-    id: '',
+    // id: '',
     author: '',
     content: '',
     template: '',
