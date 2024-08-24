@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import {
   provideHttpClient,
@@ -33,7 +33,7 @@ import { CardComponent } from './features/thoughts/card/card.component';
     UpdateThoughtsComponent,
     CardComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [provideHttpClient(withInterceptorsFromDi())],
   bootstrap: [AppComponent],
 })

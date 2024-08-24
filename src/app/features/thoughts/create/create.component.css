@@ -125,6 +125,14 @@ input[type="radio"]:checked + .custom-radio span {
   background: #154580;
 }
 
+.error-message {
+  font-size: 12px;
+  margin-left: 5px;
+  color: red;
+  margin-top: -25px;
+  margin-bottom: 30px;
+}
+
 @media (max-width: 1200px) {
   .container-radio {
     gap: 2.5rem;

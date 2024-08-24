@@ -2,39 +2,58 @@
   <header class="header">
     <h2>Adicione um pensamento novo:</h2>
   </header>
-  <form>
+  <form [formGroup]="thoughtForm">
     <label for="thought">Pensamento: *</label>
     <input
       type="textarea"
       class="input"
       id="thought"
-      name="thought"
       placeholder="Digite o pensamento"
-      [(ngModel)]="thought.content"
       autocomplete="off"
-      required="required"
+      formControlName="content"
     />
-
+    <div class="error-message" *ngIf="content?.touched && content?.errors">
+      Pensamento é obrigatório!
+    </div>
     <label for="author">Autoria ou fonte:</label>
     <input
       type="text"
       class="input"
       id="author"
-      name="author"
       placeholder="Digite a autoria ou fonte"
       autocomplete="off"
-      [(ngModel)]="thought.author"
+      formControlName="author"
     />
+    <div
+      class="error-message"
+      *ngIf="author?.touched && 
+      author?.errors?.['required']"
+    >
+      Autoria é obrigatória!
+    </div>
+    <div
+      class="error-message"
+      *ngIf="author?.touched &&
+      author?.errors?.['minlength']"
+    >
+      Autoria precisar ter no mínimo 3 caracteres!
+    </div>
+    <div
+      class="error-message"
+      *ngIf="author?.touched &&
+      author?.errors?.['onlyLowerCaseLetters']"
+    >
+      Esse campo aceita apenas letras minúsculas
+    </div>
     <label for="template">Selecione o modelo do card: *</label>
     <div class="container-radio">
       <div class="radio-template" *ngFor="let template of templates">
         <label [for]="template.id">
           <input
             type="radio"
-            name="template-card"
             [id]="template.id"
             [value]="template.id"
-            [(ngModel)]="thought.template"
+            formControlName="template"
           />
           <div class="custom-radio">
             <span></span>
@@ -44,15 +63,21 @@
         Prévia:
         <div class="template ff-roboto-mono" [ngClass]="template.id">
           <img [src]="'/assets/' + template.id + '.png'" alt="Colored quotes" />
-          <p class="content">{{ thought.content }}</p>
+          <p class="content">{{ content?.value }}</p>
           <p class="author">
-            <b>{{ thought.author }}</b>
+            <b>{{ author?.value }}</b>
           </p>
         </div>
       </div>
     </div>
     <div class="actions">
-      <button (click)="createThought()" class="button w-space">Salvar</button>
+      <button
+        (click)="createThought()"
+        [ngClass]="handleDisabledButtonStyle()"
+        [disabled]="!thoughtForm.valid"
+      >
+        Salvar
+      </button>
       <button (click)="cancel()" class="button w-space">Cancelar</button>
     </div>
   </form>
