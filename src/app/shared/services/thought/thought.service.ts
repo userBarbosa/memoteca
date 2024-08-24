@@ -18,14 +18,16 @@ export class ThoughtService {
     return this.client.post<Thought>(url, thought);
   }
 
-  list(pageNumber: number = 1): Observable<PaginatedResponse> {
-    const params = new HttpParams()
+  list(pageNumber: number = 1, filter?: string): Observable<Thought[]> {
+    let params = new HttpParams()
       .append('_page', pageNumber)
-      .append('_per_page', this.cs.ITENS_PER_PAGE || 6);
+      .append('_limit', this.cs.ITENS_PER_PAGE || 6);
 
+    if (filter && filter.trim().length > 2) {
+      params = params.append('q', filter);
+    }
     const url = this.baseURL + this.commonPath;
-    const response = this.client.get<PaginatedResponse>(url, { params });
-    return response;
+    return this.client.get<Thought[]>(url, { params });
   }
 
   listAll(): Observable<Thought[]> {
@@ -47,14 +49,4 @@ export class ThoughtService {
     const url = this.baseURL + this.commonPath + `/${thought.id}`;
     return this.client.put<Thought>(url, thought);
   }
-}
-
-type PaginatedResponse = {
-  first: number
-  prev: number | null
-  next: number | null
-  last: number
-  pages: number
-  items: number
-  data: Thought[]
 }

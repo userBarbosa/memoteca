@@ -17,20 +17,35 @@ export class ListThoughtsComponent implements OnInit {
   thoughtList: Thought[] = [];
   page: number = 1;
   hasNextPage: boolean = true;
+  filter: string = '';
 
   ngOnInit(): void {
-    this.service.list(this.page).subscribe((thoughts) => {
-      this.thoughtList = thoughts?.data;
-      if (!thoughts.next) {
+    this.service.list(this.page, this.filter).subscribe((thoughts) => {
+      this.thoughtList = thoughts;
+      if (!thoughts?.length || thoughts.length % this.cs.ITENS_PER_PAGE !== 0) {
         this.hasNextPage = false;
       }
     });
   }
 
   loadNextPage(): void {
-    this.service.list(++this.page).subscribe((thoughts) => {
-      this.thoughtList.push(...thoughts.data);
-      if (!thoughts.next) {
+    this.service.list(++this.page, this.filter).subscribe((thoughts) => {
+      this.thoughtList.push(...thoughts);
+      if (!thoughts?.length || thoughts.length % this.cs.ITENS_PER_PAGE !== 0) {
+        this.hasNextPage = false;
+      }
+    });
+  }
+
+  searchThoughts() {
+    if (this.filter?.length <= 2) {
+      return;
+    }
+    this.page = 1;
+    this.hasNextPage = true;
+    this.service.list(this.page, this.filter).subscribe((thoughts) => {
+      this.thoughtList = thoughts;
+      if (!thoughts?.length || thoughts.length % this.cs.ITENS_PER_PAGE !== 0) {
         this.hasNextPage = false;
       }
     });
