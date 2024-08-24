@@ -1,10 +1,10 @@
 {
   "thoughts": [
     {
-      "id": "921a",
-      "content": "Card example",
-      "author": "Author",
-      "template": "template3"
+      "id": "string",
+      "content": "string",
+      "author": "string",
+      "template": "'template1'|'template2'|'template3'"
     }
   ]
 }

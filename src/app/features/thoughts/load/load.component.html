@@ -1,0 +1,17 @@
+<!-- <div class="center" *ngIf="hasNextPage; else noMorePages">
+  <button class="button load-more">Carregar mais</button>
+</div>
+
+<ng-template #noMorePages>
+  <p class="center-message ff-inter">Não há mais pensamentos para exibir</p>
+</ng-template> -->
+
+<div class="center">
+  <button
+    [ngClass]="handleDisabledButton()"
+    [disabled]="!hasNextPage"
+    [title]="handleTooltip()"
+  >
+    Carregar mais
+  </button>
+</div>

@@ -15,10 +15,24 @@ export class ListThoughtsComponent implements OnInit {
   readonly routes;
 
   thoughtList: Thought[] = [];
+  page: number = 1;
+  hasNextPage: boolean = true;
 
   ngOnInit(): void {
-    this.service.list().subscribe((thoughts) => {
-      this.thoughtList = thoughts;
+    this.service.list(this.page).subscribe((thoughts) => {
+      this.thoughtList = thoughts?.data;
+      if (!thoughts.next) {
+        this.hasNextPage = false;
+      }
+    });
+  }
+
+  loadNextPage(): void {
+    this.service.list(++this.page).subscribe((thoughts) => {
+      this.thoughtList.push(...thoughts.data);
+      if (!thoughts.next) {
+        this.hasNextPage = false;
+      }
     });
   }
 }

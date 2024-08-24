@@ -18,4 +18,6 @@ export class ConfigService {
     { id: 'template2', name: 'Modelo 2' },
     { id: 'template3', name: 'Modelo 3' },
   ];
+
+  readonly ITENS_PER_PAGE = 6;
 }

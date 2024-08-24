@@ -11,6 +11,7 @@
     </div>
   </div>
 </section>
+<app-load [hasNextPage]="hasNextPage" (click)="loadNextPage()"></app-load>
 <ng-template #emptyList>
   <div class="ff-inter empty-list">
     <p>Ainda não há pensamentos cadastrados!</p>
