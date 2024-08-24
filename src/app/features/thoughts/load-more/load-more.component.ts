@@ -1,11 +1,11 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-load',
-  templateUrl: './load.component.html',
-  styleUrl: './load.component.css',
+  selector: 'app-load-more',
+  templateUrl: './load-more.component.html',
+  styleUrl: './load-more.component.css',
 })
-export class LoadComponent {
+export class LoadMoreComponent {
   @Input() hasNextPage: boolean = false;
 
   constructor() {}
