@@ -67,4 +67,4 @@ A screenshot displaying the "New Thoughts" section with some thoughts added. Thi
 A video demonstrating the responsiveness of the application. This video showcases how the application adjusts and functions across different screen sizes and devices.  
 Video: ![Responsiveness Video](13-responsiveness.mp4)  
 GIF Preview:  
-![13-responsiveness]()  
+![13-responsiveness](https://github.com/user-attachments/assets/80fcdf47-304a-45bf-bbe0-eac0380b6bc1)
