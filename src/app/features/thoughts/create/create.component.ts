@@ -33,7 +33,7 @@ export class CreateThoughtsComponent implements OnInit {
     const authorValidators = [
       Validators.required,
       Validators.minLength(3),
-      this.customValidators.onlyLowerCaseLetters,
+      // this.customValidators.onlyLowerCaseLetters,
     ];
 
     this.thoughtForm = this.formBuilder.group({
