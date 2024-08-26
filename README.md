@@ -29,10 +29,16 @@ npm install
 
 ### Development
 
-To run the development server:
+To run the development server using nvm to auto adjust node version:
 
 ```bash
-ng serve
+npm run start
+```
+
+To run the development server without using nvm:
+
+```bash
+npm run serve
 ```
 
 Navigate to `http://localhost:4200/`.
