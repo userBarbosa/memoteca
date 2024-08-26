@@ -40,6 +40,7 @@ export class CreateThoughtsComponent implements OnInit {
       content: ['', Validators.compose(contentValidators)],
       author: ['', Validators.compose(authorValidators)],
       template: ['template1'],
+      favorite: [false]
     });
   }
 

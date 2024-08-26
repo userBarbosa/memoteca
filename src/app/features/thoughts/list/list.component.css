@@ -22,7 +22,7 @@
 }
 
 .search-bar {
-  background: #F8F9FE;
+  background: #f8f9fe;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   height: 44px;
@@ -39,8 +39,8 @@
 }
 
 input::placeholder {
-  color: #C4C4C4;
-  font-family: 'Inter';
+  color: #c4c4c4;
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -56,7 +56,7 @@ input[type="search"]::-webkit-search-cancel-button {
   height: 100%;
   left: 437px;
   top: 537px;
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -68,19 +68,74 @@ input[type="search"]::-webkit-search-cancel-button {
   border-radius: 10px;
 }
 
+.favorite-text {
+  color: #154580;
+  font-weight: bold;
+  text-align: center;
+  margin-right: 20px;
+}
+
+.toggle-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-left: 20px;
+}
+
+.toggle-button {
+  position: relative;
+  width: 60px;
+  height: 30px;
+  border: none;
+  border-radius: 34px;
+  cursor: pointer;
+  outline: none;
+  background-color: #ccc;
+  transition: background-color 0.4s;
+  overflow: hidden;
+}
+
+.toggled-on {
+  background-color: #6bd1ff;
+}
+.toggled-off {
+  background-color: #ccc;
+}
+
+.toggle-button::before {
+  content: "";
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  left: 2px;
+  bottom: 2px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: transform 0.4s, background-image 0.4s;
+}
+
+.toggled-on::before {
+  margin-right: 1px;
+  background-image: url("/assets/favorite-icon-active.png");
+  transform: translateX(28px);
+}
+
+.toggled-off::before {
+  background-image: url("/assets/favorite-icon-inactive.png");
+  transform: translateX(2px);
+}
+
 @media screen and (max-width: 990px) {
   .d-flex {
     justify-content: space-between;
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
-  .search-bar {
-    grid-column: 1 / 3;
-    width: 100%;
-  }
 }
 
-@media screen and (max-width: 765px) {
+@media screen and (max-width: 767px) {
   .d-flex {
     justify-content: space-between;
     display: flex;
@@ -91,21 +146,3 @@ input[type="search"]::-webkit-search-cancel-button {
     max-width: 270px;
   }
 }
-
-/* @media screen and (min-width: 216px) {
-  .search-bar {
-    width: 250px;
-  }
-}
-
-@media screen and (min-width: 396px) {
-  .search-bar {
-    width: 380px;
-  }
-}
-
-@media screen and (min-width: 576px) {
-  .search-bar {
-    width: 310px;
-  }
-} */

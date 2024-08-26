@@ -8,14 +8,17 @@
     <b>{{ thought.author }}</b>
   </p>
   <div class="actions">
+    <button class="action-button favorite" (click)="toggleFavorite()">
+      <img src="{{ getFavoriteIcon() }}" alt="Favorite Icon" />
+    </button>
     <button
-      class="update-button"
+      class="action-button update"
       routerLink="/thoughts/update/{{ thought.id }}"
     >
       <img src="/assets/update-icon.png" alt="Update icon" />
     </button>
     <button
-      class="delete-button"
+      class="action-button delete"
       routerLink="/thoughts/delete/{{ thought.id }}"
     >
       <img src="/assets/delete-icon.png" alt="Delete icon" />

@@ -4,7 +4,8 @@
       "id": "string",
       "content": "string",
       "author": "string",
-      "template": "'template1'|'template2'|'template3'"
+      "template": "'template1'|'template2'|'template3'",
+      "favorite": true
     }
   ]
 }

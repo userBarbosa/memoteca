@@ -18,36 +18,71 @@ export class ListThoughtsComponent implements OnInit {
   page: number = 1;
   hasNextPage: boolean = true;
   filter: string = '';
+  favoriteOnly: boolean = false;
+  favoriteList: Thought[] = [];
 
   ngOnInit(): void {
-    this.service.list(this.page, this.filter).subscribe((thoughts) => {
-      this.thoughtList = thoughts;
-      if (!thoughts?.length || thoughts.length % this.cs.ITENS_PER_PAGE !== 0) {
-        this.hasNextPage = false;
-      }
-    });
+    this.refresh();
+  }
+
+  refresh(): void {
+    this.page = 1;
+    this.hasNextPage = true;
+    this.service
+      .list(this.page, this.favoriteOnly, this.filter)
+      .subscribe((thoughts) => {
+        this.thoughtList = thoughts;
+        if (this.favoriteOnly) {
+          this.favoriteList = thoughts;
+        }
+        if (
+          !thoughts?.length ||
+          thoughts.length % this.cs.ITENS_PER_PAGE !== 0
+        ) {
+          this.hasNextPage = false;
+        }
+      });
   }
 
   loadNextPage(): void {
-    this.service.list(++this.page, this.filter).subscribe((thoughts) => {
-      this.thoughtList.push(...thoughts);
-      if (!thoughts?.length || thoughts.length % this.cs.ITENS_PER_PAGE !== 0) {
-        this.hasNextPage = false;
-      }
-    });
+    this.service
+      .list(++this.page, this.favoriteOnly, this.filter)
+      .subscribe((thoughts) => {
+        this.thoughtList.push(...thoughts);
+        if (
+          !thoughts?.length ||
+          thoughts.length % this.cs.ITENS_PER_PAGE !== 0
+        ) {
+          this.hasNextPage = false;
+        }
+      });
+  }
+
+  toggleFavorite(): void {
+    this.favoriteOnly = !this.favoriteOnly;
+    this.refresh();
+  }
+
+  toggleStyle(): string {
+    return this.favoriteOnly ? 'toggled-on' : 'toggled-off';
   }
 
   searchThoughts() {
-    if (this.filter?.length <= 2) {
+    if (this.filter !== '' && this.filter?.length <= 2) {
       return;
     }
     this.page = 1;
     this.hasNextPage = true;
-    this.service.list(this.page, this.filter).subscribe((thoughts) => {
-      this.thoughtList = thoughts;
-      if (!thoughts?.length || thoughts.length % this.cs.ITENS_PER_PAGE !== 0) {
-        this.hasNextPage = false;
-      }
-    });
+    this.service
+      .list(this.page, this.favoriteOnly, this.filter)
+      .subscribe((thoughts) => {
+        this.thoughtList = thoughts;
+        if (
+          !thoughts?.length ||
+          thoughts.length % this.cs.ITENS_PER_PAGE !== 0
+        ) {
+          this.hasNextPage = false;
+        }
+      });
   }
 }

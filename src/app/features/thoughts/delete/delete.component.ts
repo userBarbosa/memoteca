@@ -22,6 +22,7 @@ export class DeleteThoughtsComponent implements OnInit {
     author: '',
     content: '',
     template: '',
+    favorite: false
   };
 
   ngOnInit(): void {

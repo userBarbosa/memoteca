@@ -1,6 +1,16 @@
 <section class="container">
   <header class="header d-flex">
     <h2 class="ff-inter fit-content">Meu Mural</h2>
+    <div class="toggle-action">
+      <span class="favorite-text ff-inter">Apenas Favoritos</span>
+      <button
+        class="toggle-button"
+        [ngClass]="toggleStyle()"
+        (click)="toggleFavorite()"
+      ></button>
+    </div>
+  </header>
+  <div class="d-flex">
     <button routerLink="/thoughts/create" class="button">
       Adicionar pensamento
     </button>
@@ -13,12 +23,12 @@
         [(ngModel)]="filter"
         (keyup)="searchThoughts()"
       />
-      <img src="/assets/search-icon.png" alt="Magnifying Glass">
+      <img src="/assets/search-icon.png" alt="Magnifying Glass" />
     </div>
-  </header>
+  </div>
   <div class="thought-wall" *ngIf="thoughtList.length > 0; else emptyList">
     <div *ngFor="let thought of thoughtList">
-      <app-card [thought]="thought"></app-card>
+      <app-card [thought]="thought" [favoriteList]="favoriteList"></app-card>
     </div>
   </div>
 </section>

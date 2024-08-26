@@ -36,6 +36,7 @@ describe('ThoughtService', () => {
         content: 'New thought',
         author: '',
         template: '',
+        favorite: false
       };
 
       service.create(newThought).subscribe((thought) => {
@@ -58,12 +59,14 @@ describe('ThoughtService', () => {
           content: 'Thought 1',
           author: '',
           template: '',
+          favorite: false
         },
         {
           id: '2',
           content: 'Thought 2',
           author: '',
           template: '',
+          favorite: false
         },
       ];
 
@@ -86,6 +89,7 @@ describe('ThoughtService', () => {
         content: 'Single thought',
         author: '',
         template: '',
+        favorite: false
       };
 
       service.get('1').subscribe((thought) => {
@@ -107,6 +111,7 @@ describe('ThoughtService', () => {
         content: 'Deleted thought',
         author: '',
         template: '',
+        favorite: false
       };
 
       service.delete('1').subscribe((thought) => {
@@ -128,6 +133,7 @@ describe('ThoughtService', () => {
         content: 'Updated thought',
         author: '',
         template: '',
+        favorite: false
       };
 
       service.update(updatedThought).subscribe((thought) => {
